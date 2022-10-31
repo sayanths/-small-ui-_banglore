@@ -138,7 +138,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               Padding(
                 padding:
@@ -164,31 +164,28 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Wrap(
-                children: const [
+                children: [
                   CustomSubjectContainer(
                       image: 'assets/pie_chart.png',
                       mainTtitle: 'Mathematics',
                       subTitle: '\$10/month',
-                      icon: Icons.abc,
-                      lastTile: 'lastTile'),
+                      lastTile: 'To study maths'),
                   CustomSubjectContainer(
                       image: 'assets/beaker.png',
                       mainTtitle: 'Chemistry',
                       subTitle: '\$14/month',
-                      icon: Icons.abc,
-                      lastTile: 'lastTile'),
+                      lastTile: 'To study chemistry'),
                   CustomSubjectContainer(
-                      image: 'assets/satelite.png',
+                    height: 60,
+                      image: 'assets/sat2.png',
                       mainTtitle: 'Biology',
                       subTitle: '\$16/month',
-                      icon: Icons.abc,
-                      lastTile: 'lastTile'),
+                      lastTile: 'To study Biology '),
                   CustomSubjectContainer(
                       image: 'assets/language.png',
                       mainTtitle: 'Language',
                       subTitle: '\$26/month',
-                      icon: Icons.abc,
-                      lastTile: 'lastTile'),
+                      lastTile: 'To study Language'),
                 ],
               ),
             ],

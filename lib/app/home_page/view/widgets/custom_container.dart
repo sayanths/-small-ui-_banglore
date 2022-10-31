@@ -4,15 +4,15 @@ class CustomSubjectContainer extends StatelessWidget {
   final String image;
   final String mainTtitle;
   final String subTitle;
-  final IconData icon;
+  double? height;
   final String lastTile;
-  const CustomSubjectContainer({
+   CustomSubjectContainer({
     Key? key,
     required this.image,
     required this.mainTtitle,
     required this.subTitle,
-    required this.icon,
     required this.lastTile,
+    this.height
   }) : super(key: key);
 
   @override
@@ -31,6 +31,7 @@ class CustomSubjectContainer extends StatelessWidget {
           children: [
             Image.asset(
               image,
+              height: height,
             ),
             Text(
               mainTtitle,
@@ -47,8 +48,17 @@ class CustomSubjectContainer extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [Icon(icon), Text(lastTile)],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircleAvatar(
+                    radius: 5,
+                    backgroundColor: Colors.yellow,
+                  ),
+                ),
+                Text(lastTile)
+              ],
             ),
           ],
         ),
