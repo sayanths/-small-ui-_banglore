@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 class CustomSubjectContainer extends StatelessWidget {
@@ -17,11 +19,12 @@ class CustomSubjectContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 180,
-        width: 170,
+        height: size.height/4.3,
+        width: size.width/2.4,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(30),

@@ -14,6 +14,7 @@ class MainHeadingsCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
@@ -57,9 +58,10 @@ class CustomMainContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     Size size = MediaQuery.of(context).size;
     return Container(
-      height: 180,
-      width: 380,
+      height: size.height/4.5,
+      width: size.width/1.1,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.bottomRight,
@@ -102,7 +104,7 @@ class CustomMainContainer extends StatelessWidget {
                               fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
-                          width: 120,
+                          width: size.width/3.3,
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
@@ -117,8 +119,8 @@ class CustomMainContainer extends StatelessWidget {
                       width: 20,
                     ),
                     Container(
-                      height: 180,
-                      width: 200,
+                      height: size.height/4.5,
+                      width: size.width/2.3,
                       decoration: const BoxDecoration(
                         color: Colors.white10,
                         borderRadius: BorderRadius.only(

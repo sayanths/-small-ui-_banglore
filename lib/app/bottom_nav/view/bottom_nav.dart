@@ -30,33 +30,36 @@ class MyHomePage extends StatelessWidget {
           ),
           bottomNavigationBar: GetBuilder<BottomNavController>(
             builder: (controller) {
-              return WaterDropNavBar(
-                waterDropColor: const Color.fromARGB(255, 231, 79, 68),
-                backgroundColor: bottomGet.navigationBarColor,
-                onItemSelected: (int index) {
-                  controller.onChange(index);
+              return SizedBox(
+                height: 50,
+                child: WaterDropNavBar(
+                  waterDropColor: const Color.fromARGB(255, 231, 79, 68),
+                  backgroundColor: bottomGet.navigationBarColor,
+                  onItemSelected: (int index) {
+                    controller.onChange(index);
 
-                  bottomGet.pageController.animateToPage(bottomGet.newValue,
-                      duration: const Duration(milliseconds: 400),
-                      curve: Curves.easeIn);
-                },
-                selectedIndex: bottomGet.newValue,
-                barItems: <BarItem>[
-                  BarItem(
-                    filledIcon: Icons.home,
-                    outlinedIcon: Icons.home_filled,
-                  ),
-                  BarItem(
-                      filledIcon: Icons.notes,
-                      outlinedIcon: Icons.note_add_outlined),
-                  BarItem(
-                      filledIcon: Icons.shopping_cart,
-                      outlinedIcon: Icons.shopping_cart),
-                  BarItem(
-                    filledIcon: Icons.person,
-                    outlinedIcon: Icons.person,
-                  ),
-                ],
+                    bottomGet.pageController.animateToPage(bottomGet.newValue,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeIn);
+                  },
+                  selectedIndex: bottomGet.newValue,
+                  barItems: <BarItem>[
+                    BarItem(
+                      filledIcon: Icons.home,
+                      outlinedIcon: Icons.home_filled,
+                    ),
+                    BarItem(
+                        filledIcon: Icons.notes,
+                        outlinedIcon: Icons.note_add_outlined),
+                    BarItem(
+                        filledIcon: Icons.shopping_cart,
+                        outlinedIcon: Icons.shopping_cart),
+                    BarItem(
+                      filledIcon: Icons.person,
+                      outlinedIcon: Icons.person,
+                    ),
+                  ],
+                ),
               );
             },
           )),
