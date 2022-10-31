@@ -65,19 +65,42 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                   
+                  SizedBox(
                     child: Column(
                       children: [
                         Row(
-                          
                           children: [
                             Column(
                               children: [
-                                Text("sds"),
+                                const Text(
+                                  "60% off",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 35,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const Text(
+                                  "Feb 14-Mar 20",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: 120,
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.orange,
+                                        shape: const StadiumBorder()),
+                                    child: const Text("Join Now"),
+                                  ),
+                                ),
                               ],
                             ),
-                            SizedBox(width: 100,),
+                            const SizedBox(
+                              width: 20,
+                            ),
                             Container(
                               height: 180,
                               width: 200,
