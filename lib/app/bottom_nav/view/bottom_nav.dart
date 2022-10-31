@@ -5,35 +5,19 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   final bottomGet = Get.put(BottomNavController());
-  final Color navigationBarColor = Colors.white;
-  // int selectedIndex = 0;
-  
-  @override
-  void initState() {
-    super.initState();
-    bottomGet.pageController = PageController(initialPage: bottomGet.newValue);
-  }
+  MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    /// [AnnotatedRegion<SystemUiOverlayStyle>] only for android black navigation bar. 3 button navigation control (legacy)
-
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        systemNavigationBarColor: navigationBarColor,
+        systemNavigationBarColor: bottomGet.navigationBarColor,
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
       child: Scaffold(
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.white,
           body: PageView(
             physics: const NeverScrollableScrollPhysics(),
             controller: bottomGet.pageController,
@@ -47,12 +31,10 @@ class _MyHomePageState extends State<MyHomePage> {
           bottomNavigationBar: GetBuilder<BottomNavController>(
             builder: (controller) {
               return WaterDropNavBar(
-                backgroundColor: navigationBarColor,
+                waterDropColor: const Color.fromARGB(255, 231, 79, 68),
+                backgroundColor: bottomGet.navigationBarColor,
                 onItemSelected: (int index) {
                   controller.onChange(index);
-                  // setState(() {
-                  //   selectedIndex = index;
-                  // });
 
                   bottomGet.pageController.animateToPage(bottomGet.newValue,
                       duration: const Duration(milliseconds: 400),
