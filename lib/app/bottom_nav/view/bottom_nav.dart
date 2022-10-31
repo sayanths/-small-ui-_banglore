@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
 
                   bottomGet.pageController.animateToPage(bottomGet.newValue,
                       duration: const Duration(milliseconds: 400),
-                      curve: Curves.easeOutQuad);
+                      curve: Curves.easeIn);
                 },
                 selectedIndex: bottomGet.newValue,
                 barItems: <BarItem>[
